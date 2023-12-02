@@ -357,7 +357,7 @@ void readFromFileAccount(const char* fileName, struct Node* headNode)
 }
 //房间
 void readFromFileRoom(struct room* roomHead) {
-	FILE* fp = fopen("RoomData.txt", "a+");
+	FILE* fp = fopen("room_data.txt", "a+");
 	struct roomClass roomData;
 	while (fscanf(fp, "\t%d\t%d\t%d\t%d\n", &roomData.number, &roomData.situation, &roomData.type, &roomData.price) != EOF)
 	{
@@ -536,13 +536,13 @@ int loginedAdmin() {
 				printf("error/请不要输入0，1，2以外的整数");
 			}
 			printf("\t请输入要添加的账户的余额：\n");
-			scanf("%d", &tempAccount.money);
+			scanf("%f", &tempAccount.money);
 			if (tempAccount.money >= 0)
 			{
 				insertListByHead(accountList, tempAccount);
-				saveToFileAccount("AccountData.txt", accountList);
+				saveToFileAccount("account_data.txt", accountList);
 				printf("添加成功\n");
-				printf("该账号的用户名为%s, 身份为%d, 余额为%d\n", tempAccount.name, tempAccount.character, tempAccount.money);
+				printf("该账号的用户名为%s, 身份为%d, 余额为%f\n", tempAccount.name, tempAccount.character, tempAccount.money);
 				printf("此时账号列表:\n");
 				printList(accountList);
 			}
@@ -560,7 +560,7 @@ int loginedAdmin() {
 		printf("请输入要注销的账户的账户名:\n");
 		scanf("%s", tempAccount.name);
 		deleteAccountByName(accountList, tempAccount.name);
-		saveToFileAccount("AccountData.txt", accountList);
+		saveToFileAccount("account_data.txt", accountList);
 		printf("注销成功！\n");
 		printf("此时的账号列表：\n");
 		printList(accountList);
@@ -591,7 +591,7 @@ int loginedAdmin() {
 					{
 						roomData.situation = 0;//初始化为空闲状态
 						insertRoomByHead(roomList, roomData);
-						saveToFileRoom("RoomData.txt", roomList);
+						saveToFileRoom("room_data.txt", roomList);
 						printf("添加成功!\n");
 						printRoomList(roomList);
 					}
@@ -624,7 +624,7 @@ int loginedAdmin() {
 		else {
 			printf("error/请输入一个三位数\n");
 		}
-		saveToFileRoom("RoomData.txt", roomList);
+		saveToFileRoom("room_data.txt", roomList);
 		system("pause");
 		break;
 	case 5:
@@ -638,7 +638,7 @@ int loginedAdmin() {
 		struct Node* result = searchNodeByName(accountList, tempAccount.name);
 		result->data.character = tempAccount.character;
 		discount_character(result);
-		saveToFileAccount("AccountData.txt", accountList);
+		saveToFileAccount("account_data.txt", accountList);
 		printf("更改成功！\n");
 		printf("此账号的账户名为%s,此时的身份为%d\n", result->data.name, result->data.character);
 		system("pause");
@@ -682,16 +682,16 @@ int loginedNormal(struct Node* Account) {
 		printf("请输入您想要开的房间的房间号(输入一个房间):\n");
 		scanf("%d", &tempRoom.number);
 		openRoom(Account, tempRoom.number);
-		saveToFileRoom("RoomData.txt", roomList);
-		saveToFileAccount("AccountData.txt", accountList);
+		saveToFileRoom("room_data.txt", roomList);
+		saveToFileAccount("account_data.txt", accountList);
 		system("pause");
 		break;
 	case 3:
 		printf("\t【退房】\n");
 		tempRoom.number = Account->data.room;
 		quitRoom(Account, tempRoom.number);
-		saveToFileAccount("AccountData.txt", accountList);
-		saveToFileRoom("RoomData.txt", roomList);
+		saveToFileAccount("account_data.txt", accountList);
+		saveToFileRoom("room_data.txt", roomList);
 		printf("您的房卡已更新！\n");
 		look(Account);
 		system("pause");
@@ -714,13 +714,13 @@ int loginedNormal(struct Node* Account) {
 		else {
 			printf("请输入大于0的金额！\n");
 		}
-		saveToFileAccount("AccountData.txt", accountList);
+		saveToFileAccount("account_data.txt", accountList);
 		system("pause");
 		break;
 	case 6:
 		printf("消耗500元升级为vip\n");
 		toVIP(Account);
-		saveToFileAccount("AccountData.txt", accountList);
+		saveToFileAccount("account_data.txt", accountList);
 		system("pause");
 		break;
 	case 0:
@@ -765,7 +765,7 @@ int registerSelect() {
 			else
 			{
 				insertListByHead(accountList, tempAccount);
-				saveToFileAccount("AccountData.txt", accountList);
+				saveToFileAccount("account_data.txt", accountList);
 				printf("注册成功！\n");
 			}
 		}
@@ -791,7 +791,7 @@ int registerSelect() {
 		else {
 			insertListByHead(accountList, tempAccount);
 			printf("【注册成功】\n");
-			saveToFileAccount("AccountData.txt", accountList);
+			saveToFileAccount("account_data.txt", accountList);
 		}
 		break;
 	default:
@@ -880,7 +880,7 @@ int main() {
 	//初始化链表
 	accountList = CreateHead();
 	roomList = createRoomHead();
-	readFromFileAccount("AccountData.txt", accountList);
+	readFromFileAccount("account_data.txt", accountList);
 	readFromFileRoom(roomList);
 	while (1)
 	{

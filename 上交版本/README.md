@@ -76,7 +76,7 @@
 
 3.实现了数据的持久化
 
-​		通过文件的读写功能，将文件用txt保存至本地，并在每次开启程序时读取。（具体位置位于源文件的根目录的AccountData.txt, RoomData.txt）
+​		通过文件的读写功能，将文件用txt保存至本地，并在每次开启程序时读取。（具体位置位于源文件的根目录的account_data.txt和room_data.txt）
 
 <img src="./images/13.png" alt="13" style="zoom:67%;" />
 

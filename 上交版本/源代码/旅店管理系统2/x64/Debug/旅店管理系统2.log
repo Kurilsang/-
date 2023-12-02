@@ -1,10 +1,8 @@
 ﻿  源.c
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(417,69): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(418,29): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(467,13): warning C4133: “函数”: 从“Node *”到“room *”的类型不兼容
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(539,10): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“float *”
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(545,12): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 3 拥有了类型“double”
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(308): warning C4716: “loginAdminMenu”: 必须返回一个值
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(503): warning C4716: “toVIP”: 必须返回一个值
-C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\旅店管理系统2\源.c(666): warning C4716: “loginedAdmin”: 必须返回一个值
-  旅店管理系统2.vcxproj -> C:\Users\30508\Desktop\program\爪哇部落后端\旅店管理系统2新\旅店管理系统2\x64\Debug\旅店管理系统2.exe
+C:\Users\30508\Desktop\program\爪哇部落后端\上交版本\源代码\旅店管理系统2\源.c(417,69): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\30508\Desktop\program\爪哇部落后端\上交版本\源代码\旅店管理系统2\源.c(418,29): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\30508\Desktop\program\爪哇部落后端\上交版本\源代码\旅店管理系统2\源.c(467,13): warning C4133: “函数”: 从“Node *”到“room *”的类型不兼容
+C:\Users\30508\Desktop\program\爪哇部落后端\上交版本\源代码\旅店管理系统2\源.c(308): warning C4716: “loginAdminMenu”: 必须返回一个值
+C:\Users\30508\Desktop\program\爪哇部落后端\上交版本\源代码\旅店管理系统2\源.c(503): warning C4716: “toVIP”: 必须返回一个值
+C:\Users\30508\Desktop\program\爪哇部落后端\上交版本\源代码\旅店管理系统2\源.c(666): warning C4716: “loginedAdmin”: 必须返回一个值
+  旅店管理系统2.vcxproj -> C:\Users\30508\Desktop\program\爪哇部落后端\上交版本\源代码\x64\Debug\旅店管理系统2.exe
